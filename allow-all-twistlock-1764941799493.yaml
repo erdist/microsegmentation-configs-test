@@ -1,0 +1,110 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-all-twistlock-1764941799493
+  namespace: twistlock
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-cluster-csi-drivers
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-image-registry
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-ovn-kubernetes
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-machine-config-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-monitoring
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-cluster-node-tuning-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-dns
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-network-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-multus
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: twistlock
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: rhacs-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: prod-altug
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-network-diagnostics
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: erdi
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-ingress-canary
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-ingress
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-cluster-csi-drivers
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-image-registry
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-ovn-kubernetes
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-machine-config-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-monitoring
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-cluster-node-tuning-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-dns
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-network-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-multus
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: twistlock
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: rhacs-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: prod-altug
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-network-diagnostics
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: erdi
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-ingress-canary
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-ingress
