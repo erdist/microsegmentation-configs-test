@@ -1,0 +1,128 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: demo-project1-soft-mode-policy-axerated
+  namespace: demo-project1
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: test-project
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: test-project-2
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: central
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: rhacs-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: istio-system
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-operators
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: quays-ai-app
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ambassador
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: prisma-airs-mcp-server
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: twistlock
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: default
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-cluster-observability-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: observability-demo
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: demo-project1
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: test-project-3
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: chatbot-demo
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: gitlab-system
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-operators-redhat
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: test-project
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: test-project-2
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: central
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: rhacs-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: istio-system
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-operators
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: quays-ai-app
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ambassador
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: prisma-airs-mcp-server
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: twistlock
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: default
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-cluster-observability-operator
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: observability-demo
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: demo-project1
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: test-project-3
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: chatbot-demo
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: gitlab-system
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: openshift-operators-redhat
